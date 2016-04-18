@@ -16,9 +16,14 @@
   (let [db (grab-db)]
     (mc/find-maps db "posts")))
 
-(defn get-post [y m d]
-  (let [db (grab-db)]
-    (mc/find db "posts" {:y y :m m :d d})))
+(defn get-post
+  ([oid-string]
+   (let [db (grab-db)
+         oid (ObjectId. oid-string)]
+     (mc/find-one-as-map db "posts" {:_id oid})))
+  ([y m d]
+   (let [db (grab-db)]
+     (mc/find-maps db "posts" {:year y :month m :day d}))))
 
 (defn insert-post [y m d body]
   (let [db (grab-db)]
