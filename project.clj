@@ -6,7 +6,8 @@
                  [compojure "1.5.0"]
                  [environ "1.0.2"]
                  [com.novemberain/monger "3.0.2"]
-                 [ring/ring-defaults "0.1.5"]]
+                 [ring/ring-defaults "0.1.5"]
+                 [cheshire "5.6.1"]]
   :plugins [[lein-ring "0.9.7"]]
   :ring {:handler blog.handler/app}
   :profiles
