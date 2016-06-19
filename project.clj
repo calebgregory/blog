@@ -12,6 +12,8 @@
   :ring {:handler blog.handler/app}
   :profiles
   {:dev {:dependencies [[javax.servlet/servlet-api "2.5"]
-                        [ring/ring-mock "0.3.0"]]}
+                        [ring/ring-mock "0.3.0"]
+                        [clj-time "0.12.0"]
+                        [markdown-clj "0.9.89"]]}
    :default [:base :system :user :provided :dev :local-dev]}
   :aliases {"test" ["with-profile" "+local-test" "test"]})

@@ -25,7 +25,7 @@
    (let [db (grab-db)]
      (mc/find-maps db "posts" {:year y :month m :day d}))))
 
-(defn insert-post [y m d body]
+(defn create-post [y m d body]
   (let [db (grab-db)]
     (mc/insert db "posts" {:_id (ObjectId.) :year y :month m :day d :body body})))
 
