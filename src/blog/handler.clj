@@ -8,7 +8,7 @@
             [blog.utils :as util]))
 
 (defroutes app-routes
-  (GET "/" [] (posts-ctrl/index))
+  (GET "/" [] (posts-ctrl/posts))
   (POST "/upload"
         {{{tempfile :tempfile filename :filename} :file} :params :as params}
         (io/copy tempfile (io/file "resources" "public" filename))
